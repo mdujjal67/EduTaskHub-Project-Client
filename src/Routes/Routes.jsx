@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Assignment from "../pages/Assignment";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         {
             path:"pending-assignment",
             element:<PendingAssignment></PendingAssignment>
+        },
+        {
+            path: "*",
+            element:<NotFoundPage></NotFoundPage>
         }
       ]
     },

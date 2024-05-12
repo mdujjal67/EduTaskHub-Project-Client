@@ -31,7 +31,7 @@ const Footer = () => {
                         <span className="label-text">Enter your email address</span>
                     </label>
                     <div className="join">
-                        <input type="text" placeholder="abc@site.com" className="input input-bordered join-item" />
+                        <input type="text" placeholder="abc@site.com"  className="input input-bordered outline-none join-item" />
                         <button className="btn bg-[#00396a] text-white join-item">Subscribe</button>
                     </div>
                 </fieldset>
