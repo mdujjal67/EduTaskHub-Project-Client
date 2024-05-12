@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/logo.png"
 import { IoSearch } from "react-icons/io5";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import '../../src/App.css'
+
 
 
 
@@ -17,16 +19,22 @@ const NavBar = () => {
             .catch(error => console.log(error))
     }
     const navItems = <>
-        <li ><Link className="hover:bg-[#00396a] hover:text-white" to="/">Home</Link></li>
-        <li><Link className="hover:bg-[#00396a] hover:text-white ml-2" to="/create-assignment">Create Assignment</Link></li>
+        {/* <li ><Link className="hover:bg-[#00396a] hover:text-white" to="/">Home</Link></li> */}
+        <li>
+        <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white' : 'hover:bg-[#00396a] hover:text-white'} to='/'>Home</NavLink>
+        </li>
+        <li>
+        <Link className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2' : 'hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2'} to='/create-assignment'>Create Assignment</Link>
+        </li>
+        {/* <li><Link className="hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2" to="/create-assignment">Create Assignment</Link></li> */}
         {/* <li><Link className="hover:bg-[#00396a] hover:text-white" to="/services">My Assignment</Link></li> */}
-        <li><Link className="hover:bg-[#00396a] hover:text-white mx-2" to="/assignment">Assignment</Link></li>
+        <li><Link className="hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2" to="/assignment">Assignment</Link></li>
         <li><Link className="hover:bg-[#00396a] hover:text-white" to="/pending-assignment">Pending Assignment</Link></li>
-        {
+        {/* {
             user?.email && (
                 <li><Link to="/bookingList">My Bookings</Link></li>
             )
-        }
+        } */}
     </>
     return (
         <div>
@@ -40,7 +48,7 @@ const NavBar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <Link to="/"><img src={logo} alt="logo-image" className="w-[70px] lg:w-44 ml-4 lg:ml-0" /></Link>
+                    <Link to="/"><img src={logo} alt="logo-image" className="w-36 lg:w-44 ml-4 lg:ml-0" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -64,7 +72,7 @@ const NavBar = () => {
                                 </div>
                             }
                         </div> 
-                    <button><IoSearch className="text-xl mx-5 hover:text-[#00396a]" /></button>
+                    <button className="hidden lg:block hover:text-[#00396a]"><IoSearch className="text-xl mx-5 hover:text-[#00396a]" /></button>
 
                     <div className="md:hidden block flex-wrap ml-4">
                        {

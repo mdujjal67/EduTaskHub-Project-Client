@@ -1,0 +1,20 @@
+.isActive{
+    /* border: 1px solid #23BE0A; */
+    border-bottom: 2px solid #00396a;
+    color: black;
+    border-radius: 4px;
+    /* background-color: #00396a; */
+}
+
+.menu-item{
+    padding: 13px 16px;
+    transition: all .3s ease;
+    /* border-radius: 8px; */
+}
+.menu-item:hover{
+    color: white;
+    border-radius: 8px;
+    border-bottom: 2px solid #805ad5;
+    background-color: #00396a;
+
+}

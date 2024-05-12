@@ -1,6 +1,28 @@
+// import { useEffect, useRef } from "react";
+// import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import BannerContent from "./BannerContent";
 
 const Banner = () => {
+    // const carouselRef = useRef(null);
+
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         carouselRef.current.slickNext();
+    //     }, 5000); // Change 5000 to the desired interval in milliseconds (e.g., 5000 for 5 seconds)
+
+    //     return () => clearInterval(interval);
+    // }, []);
+
+    // const settings = {
+    //     dots: false,
+    //     arrows: false,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    // };
     return (
         <div>
             <div className="carousel w-full mb-[100px]">
