@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
+import CreateAssignment from "../pages/CreateAssignment";
+import PendingAssignment from "../pages/PendingAssignment";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Assignment from "../pages/Assignment";
-import CreateAssignment from "../pages/CreateAssignment";
-import PendingAssignment from "../pages/PendingAssignment";
 
 const router = createBrowserRouter([
     {
