@@ -19,17 +19,22 @@ const NavBar = () => {
             .catch(error => console.log(error))
     }
     const navItems = <>
-        {/* <li ><Link className="hover:bg-[#00396a] hover:text-white" to="/">Home</Link></li> */}
         <li>
-        <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white' : 'hover:bg-[#00396a] hover:text-white'} to='/'>Home</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white' : 'hover:bg-[#00396a] hover:text-white'} to='/'>Home</NavLink>
         </li>
+
         <li>
-        <Link className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2' : 'hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2'} to='/create-assignment'>Create Assignment</Link>
+            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2' : 'hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2'} to='/create-assignment'>Create Assignment</NavLink>
         </li>
-        {/* <li><Link className="hover:bg-[#00396a] hover:text-white mt-1 lg:mt-0 lg:ml-2" to="/create-assignment">Create Assignment</Link></li> */}
-        {/* <li><Link className="hover:bg-[#00396a] hover:text-white" to="/services">My Assignment</Link></li> */}
-        <li><Link className="hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2" to="/assignment">Assignment</Link></li>
-        <li><Link className="hover:bg-[#00396a] hover:text-white" to="/pending-assignment">Pending Assignment</Link></li>
+
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2' : 'hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2'} to='/assignment'>Assignment</NavLink>
+        </li>
+
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white' : 'hover:bg-[#00396a] hover:text-white'} to='/pending-assignment'>Pending Assignment</NavLink>
+        </li>
+
         {/* {
             user?.email && (
                 <li><Link to="/bookingList">My Bookings</Link></li>
@@ -48,7 +53,7 @@ const NavBar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <Link to="/"><img src={logo} alt="logo-image" className="w-36 lg:w-44 ml-4 lg:ml-0" /></Link>
+                    <Link to="/"><img src={logo} alt="logo-image" className="w-40 lg:w-48 ml-4 lg:ml-0" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -59,24 +64,25 @@ const NavBar = () => {
                     {user && (
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img referrerPolicy="no-referrer" src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="" className="bg-gray-100"/>
+                                <img referrerPolicy="no-referrer" src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="" className="bg-gray-100" />
                             </div>
                         </label>
                     )}
-                       <div className="md:block hidden">
-                            {
-                                user?.email ? <button className="menu px-2 lg:mr-5 lg:ml-5 bg-[#ff3811] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700" onClick={handleLogOut}>Log Out</button> : <div className="flex">
-                                    <button className="menu px-2 lg:mr-6 bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/login">Login</Link></button>
+                    <div className="">
+                        {
+                            user?.email ? <button className="menu md:block hidden px-2 lg:mr-5 lg:ml-5 bg-[#ff3811] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700" onClick={handleLogOut}>Log Out</button> : 
+                            <div className="flex">
+                                <button className="menu md:block hidden px-2 lg:mr-6 bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/login">Login</Link></button>
 
-                                    <button className="menu px-2 lg:mr-6 bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/signUp">Sign Up</Link></button>
-                                </div>
-                            }
-                        </div> 
+                                <button className="menu px-2 lg:mr-6 text-[14px] lg:text-[16px] bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/signUp">Sign Up</Link></button>
+                            </div>
+                        }
+                    </div>
                     <button className="hidden lg:block hover:text-[#00396a]"><IoSearch className="text-xl mx-5 hover:text-[#00396a]" /></button>
 
                     <div className="md:hidden block flex-wrap ml-4">
-                       {
-                            user?.email ? <button className="menu px-2 lg:mr-5 lg:ml-5 bg-[#ff3811] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700" onClick={handleLogOut}>Log Out</button> : <button className="menu px-2 lg:mr-10 bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/login">Login</Link></button>
+                        {
+                            user?.email ? <button className="menu px-2 lg:mr-5 lg:ml-5 bg-[#ff3811] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700" onClick={handleLogOut}>Log Out</button> : <button className="menu px-2 lg:mr-10 bg-[#00396a] text-[14px] lg:text-[16px] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/login">Login</Link></button>
                         }
                     </div>
                 </div>

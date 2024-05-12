@@ -20,8 +20,6 @@ const Register = () => {
 
     const { createUser, googleLogin, gitHubLogin } = useContext(AuthContext);
 
-    // const {register, handleSubmit, formState: { errors }, reset} = useForm()
-
     const handleSignUp = (event) => {
         event.preventDefault()
         const form = event.target
@@ -42,6 +40,7 @@ const Register = () => {
             
         }
 
+        // User registration
         createUser(email, password)
             .then(result => {
                 const user = result.user
@@ -54,13 +53,14 @@ const Register = () => {
             .catch((error) => {
                 console.log(error)
                 return toast.error('Please try again!');
+                
             });
 
     }
 
     // dynamic title
     useEffect((() => {
-        document.title = "EduTaskHub | Register"
+        document.title = "EduTaskHub | SignUp"
     }), [])
 
     //   for google login
@@ -118,7 +118,7 @@ const Register = () => {
                                     name="password"
                                     placeholder="Password"
                                     className="input input-bordered border-[#00396a] -mt-1 rounded-full relative pl-10" required/>
-                                    <MdPassword className="absolute left-12 top-[53%] text-gray-500"/>
+                                    <MdPassword className="absolute left-12 top-[285px] text-gray-500"/>
                                 <a className="relative" href="#">
                                     <span className="absolute right-4 -top-8" onClick={() => setShowPassword(!showPassword)}>
                                         {showPassword ? <FaEye /> : <FaEyeSlash />}
@@ -127,7 +127,7 @@ const Register = () => {
                                 {/* password validation and error show */}
                                 <div>
                                     {
-                                        registerError && <p className="text-[12px] text-red-500">{registerError}</p>
+                                        registerError && <p className="text-[12px] mt-1 text-red-500">{registerError}</p>
                                     }
                                 </div>
                                 <label className="">
