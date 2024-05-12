@@ -34,7 +34,13 @@ const Register = () => {
         // reset error
         setRegisterError('')
 
-        
+        // password validation
+        if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
+            setRegisterError('Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter');
+            toast.error('Please provide valid password!');
+            return;
+            
+        }
 
         createUser(email, password)
             .then(result => {
@@ -118,7 +124,7 @@ const Register = () => {
                                         {showPassword ? <FaEye /> : <FaEyeSlash />}
                                     </span>
                                 </a>
-                                {/* input field error show */}
+                                {/* password validation and error show */}
                                 <div>
                                     {
                                         registerError && <p className="text-[12px] text-red-500">{registerError}</p>
