@@ -28,7 +28,7 @@ const NavBar = () => {
         </li>
 
         <li>
-            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2' : 'hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2'} to='/assignment'>Assignment</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2' : 'hover:bg-[#00396a] hover:text-white my-1 lg:my-0 lg:mx-2'} to='/assignment'>Assignments</NavLink>
         </li>
 
         <li>
