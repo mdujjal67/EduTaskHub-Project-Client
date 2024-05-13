@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Zoom } from "react-awesome-reveal";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const AssignmentCard = ({ assignment }) => {
 
@@ -10,7 +11,7 @@ const AssignmentCard = ({ assignment }) => {
     const [assignments, setAssignments] = useState([])
 
     const {_id, title, description, imageURL, level, marks, email } = assignment || {}
-    
+    console.log(assignment)
 
     const handleDelete = id => {
         // swet alart
@@ -21,10 +22,18 @@ const AssignmentCard = ({ assignment }) => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, remove it!"
+            confirmButtonText: "Yes, delete it!"
           })
         .then(result => {
-            
+            if(email !==user?.email){
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "You haven't access to delete this assignment!",
+                    // footer: '<a href="#">Why do I have this issue?</a>'
+                  });
+                  return;
+             }
             if(result.isConfirmed){
                 fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${id}`, {
                     method: 'DELETE'
@@ -41,6 +50,7 @@ const AssignmentCard = ({ assignment }) => {
                         });
                         const remainingAssignments = assignments.filter(assignment => assignment._id !== id);
                         setAssignments(remainingAssignments);
+                        console.log(remainingAssignments)
                     }
                 })
             }
@@ -64,7 +74,9 @@ const AssignmentCard = ({ assignment }) => {
                     <p><span className="font-bold">Marks:</span> {marks}</p>
                     <div className="flex gap-1 justify-end items-center">
                         <button onClick={() => handleDelete(_id)} className="py-1 px-4 rounded-full transition duration-300 ease-in-out transform hover:bg-gray-200 hover:text-gray-700 text-[12px] bg-red-500 text-white outline-none">Delete</button>
-                        <button className="py-1 px-4 rounded-full text-[12px] hover:bg-gray-200 hover:text-gray-700 transition duration-300 ease-in-out transform mx-2 bg-green-500  text-white outline-none">Update</button>
+                        <Link to={`/update-assignment/${_id}`}>
+                            <button className="py-1 px-4 rounded-full text-[12px] hover:bg-gray-200 hover:text-gray-700 transition duration-300 ease-in-out transform mx-2 bg-green-500  text-white outline-none">Update</button>
+                        </Link>
                     </div>
                 </div>
 

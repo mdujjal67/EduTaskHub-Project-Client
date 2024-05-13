@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp";
 import Assignments from "../pages/Assignments";
 import NotFoundPage from "../pages/NotFoundPage";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdateAssignments from "../pages/UpdateAssignments";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,14 @@ const router = createBrowserRouter([
             loader: () => fetch(`${import.meta.env.VITE_API_URL}/createdAssignments`)
         },
         {
-            path:"pending-assignment",
+            path:"/update-assignment/:id",
+            element: <PrivateRoutes>
+                <UpdateAssignments></UpdateAssignments>
+            </PrivateRoutes>,
+            loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${params.id}`)
+        },
+        {
+            path:"/pending-assignment",
             element:<PendingAssignment></PendingAssignment>
         },
         {
