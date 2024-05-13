@@ -9,7 +9,7 @@ const Assignments = () => {
     return (
         <div>
             <h1></h1>
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-7">
                 {
                     assignments.map((assignment) => <AssignmentCard key={assignment.id} assignment={assignment}></AssignmentCard>)
                 }

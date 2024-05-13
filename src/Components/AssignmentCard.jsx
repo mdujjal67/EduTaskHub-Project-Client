@@ -1,23 +1,69 @@
 import PropTypes from "prop-types"
+import { useContext, useState } from "react";
 import { Zoom } from "react-awesome-reveal";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AssignmentCard = ({ assignment }) => {
 
-    const { title, description, imageURL, level, marks } = assignment || {}
+    const { user } = useContext(AuthContext)
+    const [assignments, setAssignments] = useState([])
+
+    const {_id, title, description, imageURL, level, marks, email } = assignment || {}
+    
+
+    const handleDelete = id => {
+        // swet alart
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, remove it!"
+          })
+        .then(result => {
+            
+            if(result.isConfirmed){
+                fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Your assignment has been deleted!',
+                            icon: 'success',
+                            confirmButtonText: 'Cool'
+                        });
+                        const remainingAssignments = assignments.filter(assignment => assignment._id !== id);
+                        setAssignments(remainingAssignments);
+                    }
+                })
+            }
+        })
+    }
+
+
+
+
     return (
-        <div className="flex gap-3 p-7">
+        <div className="flex flex-col md:flex-row gap-3 p-7">
             <div className="relative">
-                <img src={imageURL} alt="" className="max-w-40 h-[160px] rounded-lg" />
-                <p className="text-[12px] mt-1 absolute -top-2 -left-6  items-center "><span className={level === 'easy' ? 'text-white bg-green-500 px-2 py-[2px] rounded-2xl' : level === 'medium' ? 'bg-orange-500 text-white px-2 py-[2px] rounded-2xl' : 'bg-red-500 px-2 py-[2px] text-white rounded-2xl'}>{level}</span></p>
+                <img src={imageURL} alt="" className="md:max-w-[170px] md:h-[165px] rounded-lg" />
+                <p className=" md:text-[12px] mt-1 absolute -top-2 -left-6  items-center "><span className={level === 'easy' ? 'text-white bg-green-500 px-2 py-[2px] rounded-2xl' : level === 'medium' ? 'bg-orange-500 text-white px-2 py-[2px] rounded-2xl' : 'bg-red-500 px-2 py-[2px] text-white rounded-2xl'}>{level}</span></p>
             </div>
             <div>
                 <h1 className="text-xl font-bold -mt-1">{title}</h1>
                 <p className="mt-1"><span className=""></span> {description}</p>
 
-                <div className="flex justify-between items-center pt-1 pb-3">
+                <div className="flex justify-between items-center pt-3 pb-3">
                     <p><span className="font-bold">Marks:</span> {marks}</p>
-                    <div className="flex  justify-end items-center">
-                        <button className="py-1 px-4 rounded-full transition duration-300 ease-in-out transform hover:bg-gray-200 hover:text-gray-700 text-[12px] bg-red-500 text-white outline-none">Delete</button>
+                    <div className="flex gap-1 justify-end items-center">
+                        <button onClick={() => handleDelete(_id)} className="py-1 px-4 rounded-full transition duration-300 ease-in-out transform hover:bg-gray-200 hover:text-gray-700 text-[12px] bg-red-500 text-white outline-none">Delete</button>
                         <button className="py-1 px-4 rounded-full text-[12px] hover:bg-gray-200 hover:text-gray-700 transition duration-300 ease-in-out transform mx-2 bg-green-500  text-white outline-none">Update</button>
                     </div>
                 </div>
