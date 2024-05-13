@@ -37,7 +37,7 @@ const CreateAssignment = () => {
         // Proceed with form submission
         setSubmitted(false); // Reset submitted state
 
-        fetch('http://localhost:5000/createdAssignments', {
+        fetch(`${import.meta.env.VITE_API_URL}/createdAssignments`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

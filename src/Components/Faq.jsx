@@ -4,7 +4,7 @@ const Faq = () => {
     return (
         <div>
             <section className="dark:bg-gray-100 dark:text-gray-800 py-10">
-            <div className="container flex flex-col justify-center px-4 py-5 mx-auto md:p-8">
+                <div className="container flex flex-col justify-center px-4 py-5 mx-auto md:p-8">
                     <h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
                     <p className="mt-4 mb-8 dark:text-gray-600">Explore common queries about our services and platform.</p>
                     <div className="space-y-4">
@@ -23,6 +23,10 @@ const Faq = () => {
                         <details className="w-full border rounded-lg">
                             <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">How do I stay updated with your latest offerings?</summary>
                             <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">To stay informed about our latest services, promotions, and updates, subscribe to our newsletter. You'll receive regular updates directly to your inbox, ensuring you never miss out on exciting opportunities.</p>
+                        </details>
+                        <details className="w-full border rounded-lg">
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">How can I access study materials or resources?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">We provide access to a wide range of study materials and resources to support your learning journey. You can access these materials through our online platform by logging into your account. Once logged in, you'll have access to course materials, lectures, assignments, and additional resources tailored to your course or program.</p>
                         </details>
                     </div>
                 </div>

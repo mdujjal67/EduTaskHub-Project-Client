@@ -5,7 +5,7 @@ import PendingAssignment from "../pages/PendingAssignment";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
-import Assignment from "../pages/Assignment";
+import Assignments from "../pages/Assignments";
 import NotFoundPage from "../pages/NotFoundPage";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -29,7 +29,8 @@ const router = createBrowserRouter([
         },
         {
             path:"/assignment",
-            element:<Assignment></Assignment>
+            element:<Assignments></Assignments>,
+            loader: () => fetch(`${import.meta.env.VITE_API_URL}/createdAssignments`)
         },
         {
             path:"/create-assignment",
