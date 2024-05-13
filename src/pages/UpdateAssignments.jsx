@@ -6,10 +6,10 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import {  useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateAssignment = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const loadedAssignments = useLoaderData();
     const {_id, title, marks, description, imageURL, date} = loadedAssignments;
 
@@ -56,7 +56,8 @@ const UpdateAssignment = () => {
                 if (data.modifiedCount > 0) {
                     toast.success('Assignment Updated Successfully!');
                     form.reset();
-                    // navigate('/assignment')
+                    navigate('/assignment')
+                    // return <Navigate state={location.pathname} to="/assignment" replace></Navigate>
                 }
 
             })

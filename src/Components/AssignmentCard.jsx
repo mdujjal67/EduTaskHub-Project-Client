@@ -25,7 +25,7 @@ const AssignmentCard = ({ assignment }) => {
             confirmButtonText: "Yes, delete it!"
           })
         .then(result => {
-            if(email !==user?.email){
+            if(email !== user?.email){
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
@@ -68,7 +68,7 @@ const AssignmentCard = ({ assignment }) => {
             </div>
             <div>
                 <h1 className="text-xl font-bold -mt-1">{title}</h1>
-                <p className="mt-1"><span className=""></span> {description}</p>
+                <p className="mt-1"><span className=""></span> {description.substring(0, 90)}...</p>
 
                 <div className="flex justify-between items-center pt-3 pb-3">
                     <p><span className="font-bold">Marks:</span> {marks}</p>
@@ -81,9 +81,11 @@ const AssignmentCard = ({ assignment }) => {
                 </div>
 
                 <div>
-                    <Zoom>
-                        <button className="transition duration-300 ease-in-out transform  py-2 rounded-lg hover:bg-gray-200 hover:text-gray-600 border-none outline-none bg-[#00396a] w-full text-white">View Details</button>
-                    </Zoom>
+                    <Link to={`/view-assignment/${_id}`}>
+                        <Zoom>
+                            <button className="transition duration-300 ease-in-out transform  py-2 rounded-lg hover:bg-gray-200 hover:text-gray-600 border-none outline-none bg-[#00396a] w-full text-white">View Details</button>
+                        </Zoom>
+                    </Link>
                 </div>
             </div>
         </div>

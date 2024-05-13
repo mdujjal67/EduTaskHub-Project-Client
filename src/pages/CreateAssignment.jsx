@@ -91,7 +91,7 @@ const CreateAssignment = () => {
                     </div>
 
                     <div className="form-control ">
-                        <textarea placeholder="Description" name="textarea" className="textarea textarea-md h-12 rounded-full" required></textarea>
+                        <textarea placeholder="Description" name="textarea" className="textarea textarea-md pb-1 h-12 rounded-full" required></textarea>
                     </div>
                     <div className="form-control">
                         <input type="text" name="imageURL" placeholder="Thumbnail Image URL" className="input rounded-full" required/>
