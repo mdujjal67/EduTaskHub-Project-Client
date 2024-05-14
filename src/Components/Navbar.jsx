@@ -34,6 +34,10 @@ const NavBar = () => {
         <li>
             <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white' : 'hover:bg-[#00396a] hover:text-white'} to='/pending-assignment'>Pending Assignment</NavLink>
         </li>
+        
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'isActive hover:bg-[#00396a] hover:text-white' : 'hover:bg-[#00396a] hover:text-white'} to='/my-attempted-assignment'>My Attempted Assignment</NavLink>
+        </li>
 
         {/* {
             user?.email && (

@@ -11,6 +11,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateAssignments from "../pages/UpdateAssignments";
 import ViewAssignment from "../pages/ViewAssignment";
 import TakeAssignment from "../pages/TakeAssignment";
+import MyAttemptedAssignments from "../pages/MyAttemptedAssignments";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,13 @@ const router = createBrowserRouter([
                 <TakeAssignment></TakeAssignment>
             </PrivateRoutes>,
             loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${params.id}`)
+        },
+        {
+            path:"/my-attempted-assignment",
+            element: <PrivateRoutes>
+                <MyAttemptedAssignments></MyAttemptedAssignments>
+            </PrivateRoutes>,
+            loader: () => fetch(`${import.meta.env.VITE_API_URL}/submittedAssignments`)
         },
         {
             path:"/pending-assignment",
