@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../../Firebase/firebase.config";
 import PropTypes from 'prop-types';
@@ -9,6 +9,7 @@ const auth = getAuth(app);
 
 // social auth provider
 const googleProvider = new GoogleAuthProvider;
+const gitHubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
 
@@ -34,18 +35,18 @@ const AuthProvider = ({ children }) => {
             const loggedInUser = { email: userEmail }
 
             setUser(currentUser)
-            console.log('Current User', currentUser)
+            // console.log('Current User', currentUser)
             setLoading(false);
 
             // for token generate
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', loggedInUser, { withCredentials: true })
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`, loggedInUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                     })
             }
             else{
-                axios.post('http://localhost:5000/logout', loggedInUser, { withCredentials: true })
+                axios.post(`${import.meta.env.VITE_API_URL}/logout`, loggedInUser, { withCredentials: true })
                     .then(res => {
                         console.log( res.data)
                     })
@@ -68,13 +69,22 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
+
+    // github sign-in
+    const gitHubLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, gitHubProvider)
+    }
+
+
     const authInfo = {
         user,
         loading,
         createUser,
         signIn,
         logOut,
-        googleLogin
+        googleLogin,
+        gitHubLogin
     }
 
 

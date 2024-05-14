@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import '../../src/App.css'
+import { SlBadge } from "react-icons/sl";
 
 
 
@@ -104,21 +105,23 @@ const NavBar = () => {
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    <img referrerPolicy="no-referrer" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
                                 </div>
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li className="">
-                                    <button className="justify-between py-1 hover:bg-[#00396a] rounded-lg text-gray-700 gray-on-dark-mode hover:text-gray-300">
-                                        Profile
-                                        <span className="badge text-[14px]">Update</span>
-                                    </button>
-                                </li>
-                               <Link to="/my-submission">
+                                <Link to="/user-profile">
+                                    <li className="">
+                                        <button className="justify-between py-1 hover:bg-[#00396a] rounded-lg text-gray-700 gray-on-dark-mode hover:text-gray-300">
+                                            Profile
+                                            <span className="badge text-[14px]"><SlBadge className="mr-1" /> New</span>
+                                        </button>
+                                    </li>
+                                </Link>
+                                <Link to="/my-submission">
                                     <li className="my-1">
                                         <button className="py-1 hover:bg-[#00396a] rounded-lg text-gray-700 gray-on-dark-mode hover:text-gray-300">My Submission</button>
                                     </li>
-                               </Link> 
+                                </Link>
                                 <li>
                                     <button className="menu md:block py-1 hover:bg-[#00396a] rounded-lg text-gray-700 gray-on-dark-mode hover:text-gray-300" onClick={handleLogOut}>Log Out</button>
                                 </li>

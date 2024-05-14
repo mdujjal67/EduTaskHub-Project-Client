@@ -12,12 +12,12 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false)
-    const { signIn, googleLogin } = useContext(AuthContext);
+    const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('')
 
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location)
+    const from = location?.state || '/'
 
 
     const handleLogin = (event) => {
@@ -73,9 +73,23 @@ const Login = () => {
                 toast.success('Login Successful!');
                 navigate(location?.state ? location?.state : '/')
             })
+    }
 
+
+    //   for github login
+    const handleGitHubLogin = () => {
+        gitHubLogin()
+            .then(result => {
+                console.log(result.user)
+                navigate(from);
+                toast.success('Login Successful!');
+                navigate(location?.state ? location?.state : '/')
+            });
+        
 
     }
+
+
 
     return (
         <div>
@@ -135,7 +149,7 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-3 px-8 flex flex-row gap-5 mx-auto items-center pb-7">
                             <div className="bg-gray-100 hover:bg-gray-200 w-8 h-8 items-center mx-auto rounded-full">
-                                <button><IoLogoGithub className="text-black text-[20px] ml-[6px] mt-[6px] mx-auto items-center" /></button>
+                                <button onClick={() => handleSocialLogin(handleGitHubLogin)}><IoLogoGithub className="text-black text-[20px] ml-[6px] mt-[6px] mx-auto items-center" /></button>
                             </div>
                             <div className="bg-gray-100 hover:bg-gray-200 w-8 h-8 items-center mx-auto rounded-full">
                                 <button onClick={() => handleSocialLogin(handleGoogleLogin)}><FcGoogle className="text-black text-[20px] ml-[6px] mt-[6px] mx-auto items-center" /></button>

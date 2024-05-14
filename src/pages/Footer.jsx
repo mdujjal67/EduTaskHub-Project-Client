@@ -27,7 +27,7 @@ const Footer = () => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
-        console.log(email);
+        // console.log(email);
         const subscriber = {email}
 
 

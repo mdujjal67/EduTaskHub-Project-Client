@@ -27,7 +27,7 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
         const userInfo = { name, email, password }
-        console.log(userInfo);
+        // console.log(userInfo);
 
         // reset error
         setRegisterError('')

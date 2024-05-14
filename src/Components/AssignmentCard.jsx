@@ -11,7 +11,7 @@ const AssignmentCard = ({ assignment }) => {
     const [assignments, setAssignments] = useState([])
 
     const {_id, title, description, imageURL, level, marks, email } = assignment || {}
-    console.log(assignment)
+    // console.log(assignment)
 
     const handleDelete = id => {
         // swet alart
@@ -50,7 +50,7 @@ const AssignmentCard = ({ assignment }) => {
                         });
                         const remainingAssignments = assignments.filter(assignment => assignment._id !== id);
                         setAssignments(remainingAssignments);
-                        console.log(remainingAssignments)
+                        // console.log(remainingAssignments)
                     }
                 })
             }

@@ -32,18 +32,11 @@ const UpdateAssignment = () => {
         const imageURL = form.imageURL.value;
         const level = form.level.value;
         const email = user?.email;
-        console.log(email)
+        // console.log(email)
         const date = form.date.value;
         const description = form.textarea.value;
         const assignmentInfo = { title, imageURL, marks, description, date, level, email }
-        console.log(assignmentInfo);
-
-        // if (selectedLevel === "") {
-        //     setSubmitted(true);
-        //     return;
-        // }
-        // Proceed with form submission
-        // setSubmitted(false); // Reset submitted state
+        // console.log(assignmentInfo);
 
         fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${_id}`, {
             method: 'PUT',
