@@ -26,7 +26,7 @@ const ViewAssignment = () => {
 
 
     return (
-        <div className="mx-auto w-[500px]">
+        <div className="mx-auto p-4 lg:p-0 lg:w-[500px]">
             <div className="animate__animated animate__fadeInLeft">
                 <img src={imageURL} alt="" className="w- lg:w-[500px] rounded-lg" />
             </div>
@@ -39,7 +39,7 @@ const ViewAssignment = () => {
             </div>
             <Link to={`/take-assignment/${_id}`}>
                 <Zoom>
-                    <button className="transition duration-300 ease-in-out transform  py-2 rounded-lg hover:bg-gray-200 hover:text-gray-600 border-none outline-none bg-[#00396a] w-full text-white">Take Assignment</button>
+                    <button className="transition duration-300 ease-in-out transform mb-10 lg:mb-0 py-2 rounded-lg hover:bg-gray-200 hover:text-gray-600 border-none outline-none bg-[#00396a] w-full text-white">Take Assignment</button>
                 </Zoom>
             </Link>
         </div>

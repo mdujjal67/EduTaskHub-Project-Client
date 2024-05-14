@@ -79,7 +79,7 @@ const NavBar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <Link to="/"><img src={logo} alt="logo-image" className="w-40 lg:w-48 ml-4 lg:ml-0" /></Link>
+                    <Link to="/"><img src={logo} alt="logo-image" className="w-44 lg:w-48 ml-2 md:ml-4 lg:ml-0" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -134,10 +134,10 @@ const NavBar = () => {
                     <div className="">
                         {
                             user?.email ? '' :
-                                <div className="flex">
-                                    <button className="menu md:block hidden px-2 lg:mr-6 bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/login">Login</Link></button>
+                                <div className="flex gap-2">
+                                    <button className="menu text-[14px] lg:text-[16px] px-1 lg:mr-4 bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/login">Login</Link></button>
 
-                                    <button className="menu px-2 lg:mr-6 text-[14px] lg:text-[16px] bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/signUp">Sign Up</Link></button>
+                                    <button className="menu px-1 lg:mr-6 text-[14px] lg:text-[16px] bg-[#00396a] rounded-lg text-white hover:bg-gray-200 hover:text-gray-700"><Link to="/signUp">Sign Up</Link></button>
                                 </div>
                         }
                     </div>
