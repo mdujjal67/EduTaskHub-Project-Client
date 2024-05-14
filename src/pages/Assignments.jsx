@@ -14,7 +14,7 @@ const Assignments = () => {
             <div className="input-bordered cursor-pointer required text-black w-[200px] lg:w-[300px] mx-auto outline-none focus:outline-none focus:ring focus:ring-opacity-50 focus:dark:ring-violet-600 rounded-full lg:mt-10 lg:mb-14">
                 <select 
                     name="level"
-                    className="select rounded-full join-item text-black w-full outline-none focus:outline-none focus:ring focus:ring-opacity-50 py-3 focus:dark:ring-violet-600 bg-gray-100"
+                    className="select rounded-full join-item text-black w-full outline-none focus:outline-none focus:ring focus:ring-opacity-50 py-3 focus:dark:ring-violet-600 bg-gray-200"
                     value={selectedLevel}
                     onChange={(e) => setSelectedLevel(e.target.value)}
                     required // Ensures that the select element is required

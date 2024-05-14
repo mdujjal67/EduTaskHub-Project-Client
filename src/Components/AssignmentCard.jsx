@@ -61,7 +61,7 @@ const AssignmentCard = ({ assignment }) => {
 
 
     return (
-        <div className="flex flex-col md:flex-row gap-4 p-7">
+        <div className="flex flex-col md:flex-row gap-4 p-7 shadow-xl rounded-lg">
             <div className="relative">
                 <img src={imageURL} alt="" className="md:max-w-[170px] md:h-[165px] rounded-lg" />
                 <p className=" md:text-[12px] mt-1 absolute -top-2 -left-6  items-center "><span className={level === 'easy' ? 'text-white bg-green-500 px-2 py-[2px] rounded-2xl' : level === 'medium' ? 'bg-orange-500 text-white px-2 py-[2px] rounded-2xl' : 'bg-red-500 px-2 py-[2px] text-white rounded-2xl'}>{level}</span></p>

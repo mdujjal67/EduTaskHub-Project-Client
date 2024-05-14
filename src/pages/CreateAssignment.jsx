@@ -63,20 +63,20 @@ const CreateAssignment = () => {
                 <p className="text-center text-[14px] text-gray-400 mb-12 -mt-1">User: {user?.email}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
                     <div className="form-control">
-                        <input type="text" name="title" placeholder="Assignment Title" className="input rounded-full" required />
+                        <input type="text" name="title" placeholder="Assignment Title" className="input rounded-full dark:text-gray-300" required />
                     </div>
                     {/* <div className="form-control">
                         <input type="date" name="date" placeholder="Date"  className="input" required />
                     </div> */}
-                    <DatePicker name="date" className="text-gray-500 w-full py-3 rounded-full pl-5" selected={startDate} onChange={(date) => setStartDate(date)} required />
+                    <DatePicker name="date" className="text-gray-500 dark:text-gray-400 w-full py-3 rounded-full pl-5" selected={startDate} onChange={(date) => setStartDate(date)} required />
                     <div className="form-control">
                         <input type="text" name="marks" placeholder="Assignment Marks" className="input rounded-full" required />
                     </div>
 
-                    <div className="input-bordered required text-black lg:w-full focus:outline-none focus:ring focus:ring-opacity-50 focus:dark:ring-violet-600 rounded-full">
+                    <div className="input-bordered required text-black dark:text-gray-400 lg:w-full focus:outline-none focus:ring focus:ring-opacity-50 focus:dark:ring-violet-600 rounded-full">
                         <select
                             name="level"
-                            className="select rounded-full join-item text-black w-full focus:outline-none focus:ring focus:ring-opacity-50 py-3 focus:dark:ring-violet-600"
+                            className="select rounded-full join-item text-black dark:text-gray-400 w-full focus:outline-none focus:ring focus:ring-opacity-50 py-3 focus:dark:ring-violet-600"
                             value={selectedLevel}
                             onChange={(e) => setSelectedLevel(e.target.value)}
                             required // Ensures that the select element is required
@@ -92,16 +92,16 @@ const CreateAssignment = () => {
                     </div>
 
                     <div className="form-control ">
-                        <textarea placeholder="Description" name="textarea" className="textarea textarea-md pb-1 h-12 rounded-full" required></textarea>
+                        <textarea placeholder="Description" name="textarea" className="textarea  textarea-md pb-1 h-12 dark:text-gray-400 rounded-full" required></textarea>
                     </div>
                     <div className="form-control">
-                        <input type="text" name="imageURL" placeholder="Thumbnail Image URL" className="input rounded-full" required/>
+                        <input type="text" name="imageURL" placeholder="Thumbnail Image URL" className="input rounded-full dark:text-gray-400" required/>
                     </div>
                 </div>
 
 
                 <div className="form-control pt-5">
-                    <input type="submit" className="btn btn-block bg-[#00396a] text-white hover:text-gray-700 rounded-full" value="Create Assignment" />
+                    <input type="submit" className="btn btn-block bg-[#00396a] text-white hover:text-gray-400 rounded-full" value="Create Assignment" />
                 </div>
             </form>
         </div>

@@ -6,6 +6,18 @@
     /* background-color: #00396a; */
 }
 
+@media (prefers-color-scheme: dark) {
+    .gray-on-dark-mode {
+        color: rgb(193, 191, 191);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .blue-border-dark-mode {
+        border-bottom: 2px solid #076ec8;
+    }
+}
+
+
 .menu-item{
     padding: 13px 16px;
     transition: all .3s ease;
