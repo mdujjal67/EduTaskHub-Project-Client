@@ -1,8 +1,10 @@
-
+// import userIcon from "../assets/user-icon-8.png"
 import '../App.css'
 import { MdWorkspacePremium } from "react-icons/md";
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Link } from "react-router-dom";
+import userImg from "../assets/user-icon-8.png"
 
 const UserProfile = () => {
 
@@ -16,12 +18,12 @@ const UserProfile = () => {
         <div>
             <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 container mx-auto mt-10 md:mt-16 lg:mt-20 py-10">
                 <div className="w-24 lg:w-32 lg:h-32 h-24 rounded-full mx-auto mt-10 bg-gray-200">
-                    <img className="rounded-full w-full" src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
+                    <img className="rounded-full w-24 lg:w-32 lg:h-32 h-24" src={user?.photoURL || userImg} alt="user" />
                 </div>
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">
                         <h2 className="Montserrat text-xl font-semibold sm:text-2xl">{user?.displayName}</h2>
-                        <h2 className="work-sans font-normal">{user?.email}</h2>
+                        <h2 className="work-sans font-normal text-[14px]">{user?.email}</h2>
                         <div className=" flex items-center text-center mb-5">
                             <MdWorkspacePremium className="text-yellow-400 ml-14 text-[14px] " />
                             <p className="pr-5 text-[14px] dark:text-gray-600 ">Premium User</p>
@@ -50,7 +52,10 @@ const UserProfile = () => {
                         </a>
                     </div>
                 </div>
-                <button className='mt-5 btn'>Update Profile</button>
+                <Link to="/update-profile">
+                    <button className='mt-5 btn input-bordered flex items-center gap-2 rounded-full w-full bg-[#00396a] text-white hover:bg-gray-300 hover:border-none'>Update Profile</button>
+                </Link>
+                
             </div>
         </div>
     );

@@ -13,6 +13,7 @@ import ViewAssignment from "../pages/ViewAssignment";
 import TakeAssignment from "../pages/TakeAssignment";
 import MyAttemptedAssignments from "../pages/MyAttemptedAssignments";
 import UserProfile from "../pages/UserProfile";
+import UpdateProfile from "../pages/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -75,6 +76,12 @@ const router = createBrowserRouter([
         {
             path:"/user-profile",
             element:<UserProfile></UserProfile>
+        },
+        {
+            path:"update-profile",
+            element:<PrivateRoutes>
+                <UpdateProfile></UpdateProfile>
+            </PrivateRoutes>
         },
         {
             path:"/pending-assignment",

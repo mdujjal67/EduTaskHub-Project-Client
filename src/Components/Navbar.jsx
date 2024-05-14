@@ -5,6 +5,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import '../../src/App.css'
 import { SlBadge } from "react-icons/sl";
+// import { FaUser } from "react-icons/fa";
+import userImg from "../assets/user-icon-8.png"
 
 
 
@@ -105,7 +107,7 @@ const NavBar = () => {
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img referrerPolicy="no-referrer" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="user" />
+                                    <img referrerPolicy="no-referrer" src={user?.photoURL || userImg} alt="user" />
                                 </div>
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">

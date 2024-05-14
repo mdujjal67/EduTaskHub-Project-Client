@@ -18,7 +18,7 @@ const TakeAssignment = () => {
         const status = "pending";
 
         const SubmittedDetails = {email, link, note, status, title, imageURL, marks, description, date, level }
-        console.log(SubmittedDetails);
+        // console.log(SubmittedDetails);
 
 
         fetch(`${import.meta.env.VITE_API_URL}/submittedAssignments`, {
