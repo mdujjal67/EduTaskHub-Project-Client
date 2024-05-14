@@ -15,7 +15,7 @@ const UserProfile = () => {
     }), [])
 
     return (
-        <div>
+        <div className='pb-10 lg:pb-0'>
             <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 container mx-auto mt-10 md:mt-16 lg:mt-20 py-10">
                 <div className="w-24 lg:w-32 lg:h-32 h-24 rounded-full mx-auto mt-10 bg-gray-200">
                     <img className="rounded-full w-24 lg:w-32 lg:h-32 h-24" src={user?.photoURL || userImg} alt="user" />

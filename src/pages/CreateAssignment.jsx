@@ -49,7 +49,7 @@ const CreateAssignment = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    toast.success('Assignment Created Successfully!');
+                    toast.success('Assignment Created!');
                     form.reset()
                 }
 

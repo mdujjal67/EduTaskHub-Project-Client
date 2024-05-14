@@ -11,7 +11,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateAssignments from "../pages/UpdateAssignments";
 import ViewAssignment from "../pages/ViewAssignment";
 import TakeAssignment from "../pages/TakeAssignment";
-import MyAttemptedAssignments from "../pages/MyAttemptedAssignments";
+import MyAttemptedAssignments from "../pages/MySubmission";
 import UserProfile from "../pages/UserProfile";
 import UpdateProfile from "../pages/UpdateProfile";
 
@@ -75,7 +75,9 @@ const router = createBrowserRouter([
         },
         {
             path:"/user-profile",
-            element:<UserProfile></UserProfile>
+            element:<PrivateRoutes>
+                <UserProfile></UserProfile>
+            </PrivateRoutes>
         },
         {
             path:"update-profile",

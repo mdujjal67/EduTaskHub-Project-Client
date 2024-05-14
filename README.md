@@ -21,3 +21,4 @@ Welcome to EduTaskHub, your ultimate academic task management platform! Here, st
 - **Framer-Motion**
 - **Animate.css**
 - **Sweetalert2**
+- **React-Awesome-Reveal**

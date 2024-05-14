@@ -1,5 +1,5 @@
 
-const MyAttemptedAssignments = () => {
+const MySubmission = () => {
     return (
         <div>
             <ul>
@@ -12,4 +12,4 @@ const MyAttemptedAssignments = () => {
     );
 };
 
-export default MyAttemptedAssignments;
+export default MySubmission;

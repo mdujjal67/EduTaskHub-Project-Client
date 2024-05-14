@@ -17,7 +17,7 @@ const UpdateProfile = () => {
     const [updatePassError, setUpdatePassError] = useState('')
     const { user, updateUserProfile } = useContext(AuthContext)
     // State variables for user profile data
-    const [displayName, setDisplayName] = useState(user?.displayName || "Your name");
+    const [displayName, setDisplayName] = useState(user?.displayName || "User!");
     const [photoURL, setPhotoURL] = useState(user?.photoURL || userImg);
     const [password, setPassword] = useState(""); // For new password
 
@@ -51,7 +51,7 @@ const UpdateProfile = () => {
     };
 
     return (
-        <div>
+        <div className="mb-10 lg:pb-0">
             <h1 className="pt-14 md:pt-20 lg:pt-14 text-center text-2xl">Hi! <span className="text-[#46af36] Montserrat font-bold">{user?.displayName || user?.email.substring(0, 6)}</span></h1>
             <p className="text-center">Update your profile</p>
             <div className="w-24 lg:w-28 lg:h-28 h-24 rounded-full mx-auto mt-10 bg-gray-200">
