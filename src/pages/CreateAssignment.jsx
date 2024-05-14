@@ -15,13 +15,14 @@ const CreateAssignment = () => {
     // const assignment = useLoaderData();
     const [startDate, setStartDate] = useState(new Date());
     const {user} = useContext(AuthContext)
-    // const { title } = assignment
+
+    
 
     const handleCreate = (event) => {
         event.preventDefault();
         const form = event.target;
         const title = form.title.value;
-        const marks = form.marks.value;
+        const marks = parseInt(form.marks.value);
         const imageURL = form.imageURL.value;
         const level = form.level.value;
         const email = user?.email;

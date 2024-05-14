@@ -27,7 +27,7 @@ const UpdateAssignment = () => {
         event.preventDefault();
         const form = event.target;
         const title = form.title.value;
-        const marks = form.marks.value;
+        const marks = parseInt(form.marks.value);
         const imageURL = form.imageURL.value;
         const level = form.level.value;
         const email = user?.email;
@@ -57,7 +57,6 @@ const UpdateAssignment = () => {
                     toast.success('Assignment Updated Successfully!');
                     form.reset();
                     navigate('/assignment')
-                    // return <Navigate state={location.pathname} to="/assignment" replace></Navigate>
                 }
 
             })

@@ -61,7 +61,7 @@ const router = createBrowserRouter([
             element:<PrivateRoutes>
                 <TakeAssignment></TakeAssignment>
             </PrivateRoutes>,
-            loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/take-assignment/${params.id}`)
+            loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${params.id}`)
         },
         {
             path:"/pending-assignment",
