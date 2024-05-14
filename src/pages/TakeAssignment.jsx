@@ -8,9 +8,7 @@ const TakeAssignment = () => {
     const { user } = useContext(AuthContext)
     const assignmentDetails = useLoaderData()
     const { title, imageURL, description, date, marks, level } = assignmentDetails
-    console.log(assignmentDetails)
     
-
     const handleTakeAssignment = (event) => {
         event.preventDefault();
         const form = event.target;

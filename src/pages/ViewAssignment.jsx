@@ -1,11 +1,27 @@
 import { Zoom } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 import 'animate.css';
+import { AuthContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 
 const ViewAssignment = () => {
 
     const assignmentDetails = useLoaderData()
-    const {_id, title, imageURL, description, date, marks, level } = assignmentDetails
+    const {_id, title, imageURL, description, date, marks, level } = assignmentDetails;
+
+    const {loading} = useContext(AuthContext);
+    if(loading){
+        return <div className="flex justify-center items-center h-screen">
+            <span>
+                <div className="flex flex-col gap-4 w-80">
+                <div className="skeleton h-32 w-full"></div>
+                <div className="skeleton h-4 w-28"></div>
+                <div className="skeleton h-4 w-full"></div>
+                <div className="skeleton h-4 w-full"></div>
+                </div>
+        </span>
+      </div>
+    }
 
 
 

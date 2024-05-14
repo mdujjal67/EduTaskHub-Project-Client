@@ -1,10 +1,25 @@
 import { useLoaderData } from "react-router-dom";
 import AssignmentCard from "../Components/AssignmentCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Assignments = () => {
     const assignments = useLoaderData();
     const [selectedLevel, setSelectedLevel] = useState("");
+
+    const {loading} = useContext(AuthContext);
+    if(loading){
+        return <div className="flex justify-center items-center h-screen">
+            <span>
+                <div className="flex flex-col gap-4 w-80">
+                <div className="skeleton h-32 w-full"></div>
+                <div className="skeleton h-4 w-28"></div>
+                <div className="skeleton h-4 w-full"></div>
+                <div className="skeleton h-4 w-full"></div>
+                </div>
+        </span>
+      </div>
+    }
 
     // Filter assignments based on selected level
     const filteredAssignments = selectedLevel ? assignments.filter(assignment => assignment.level === selectedLevel) : assignments;

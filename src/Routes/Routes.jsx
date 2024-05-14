@@ -65,7 +65,7 @@ const router = createBrowserRouter([
             loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/createdAssignments/${params.id}`)
         },
         {
-            path:"/my-attempted-assignment",
+            path:"/my-submission",
             element: <PrivateRoutes>
                 <MyAttemptedAssignments></MyAttemptedAssignments>
             </PrivateRoutes>,

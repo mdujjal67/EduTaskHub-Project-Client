@@ -8,7 +8,12 @@
 
 @media (prefers-color-scheme: dark) {
     .gray-on-dark-mode {
-        color: rgb(193, 191, 191);
+        color: rgb(176, 175, 175);
+    }
+}
+@media (prefers-color-scheme: white) {
+    .black-on-white-mode {
+        color: rgb(52, 52, 52);
     }
 }
 @media (prefers-color-scheme: dark) {
@@ -17,6 +22,11 @@
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .black-dark-mode {
+        border-bottom: 2px solid #076ec8;
+    }
+}
 
 .menu-item{
     padding: 13px 16px;
