@@ -1,9 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const TakeAssignment = () => {
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | Take-Assignment"
+    }), [])
+
+
 
     const { user } = useContext(AuthContext)
     const assignmentDetails = useLoaderData()

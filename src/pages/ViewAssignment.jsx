@@ -2,9 +2,15 @@ import { Zoom } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 import 'animate.css';
 import { AuthContext } from "../Provider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const ViewAssignment = () => {
+
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | View-Assignment"
+    }), [])
 
     const assignmentDetails = useLoaderData()
     const {_id, title, imageURL, description, date, marks, level } = assignmentDetails;

@@ -11,7 +11,7 @@ const UserProfile = () => {
     const { user } = useContext(AuthContext)
 
     useEffect((() => {
-        document.title = "EduTaskHub | UserProfile"
+        document.title = "EduTaskHub | User-Profile"
     }), [])
 
     return (

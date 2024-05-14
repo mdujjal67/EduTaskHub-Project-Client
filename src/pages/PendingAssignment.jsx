@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import development from "../assets/Website Building of Shopping Sale.gif"
 
 const PendingAssignment = () => {
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | Pending-Assignment"
+    }), [])
+
+
+
     return (
         <div className="px-4">
             <div>

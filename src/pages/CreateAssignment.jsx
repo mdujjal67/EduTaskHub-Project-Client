@@ -11,7 +11,7 @@ const CreateAssignment = () => {
 
     // dynamic title
     useEffect((() => {
-        document.title = "EduTaskHub | CreateAssignment"
+        document.title = "EduTaskHub | Create-Assignment"
     }), [])
 
     const [selectedLevel, setSelectedLevel] = useState("");

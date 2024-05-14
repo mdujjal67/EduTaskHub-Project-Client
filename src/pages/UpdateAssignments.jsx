@@ -1,5 +1,5 @@
 // import { useLoaderData } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useState } from "react";
@@ -10,6 +10,13 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import '../../src/App.css'
 
 const UpdateAssignment = () => {
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | Update-Assignment"
+    }), [])
+
+
     const navigate = useNavigate()
     const loadedAssignments = useLoaderData();
     const {_id, title, marks, description, imageURL, date} = loadedAssignments;

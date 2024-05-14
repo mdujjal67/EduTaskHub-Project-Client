@@ -6,6 +6,13 @@ import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 const MySubmission = () => {
+
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | My-Submission"
+    }), [])
+
     const { user, loading } = useContext(AuthContext);
     const [submissions, setSubmissions] = useState([]);
     const MySubmission = useLoaderData()

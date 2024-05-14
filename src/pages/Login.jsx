@@ -1,7 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../src/Provider/AuthProvider";
 import toast from "react-hot-toast";
 import loginImg from "../assets/login.png"
@@ -10,6 +10,11 @@ import { FaRegUser } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 // import axios from "axios";
 const Login = () => {
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | Login"
+    }), [])
 
     const [showPassword, setShowPassword] = useState(false)
     const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);

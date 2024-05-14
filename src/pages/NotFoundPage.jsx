@@ -1,11 +1,18 @@
 // import { Link } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import img from "../assets/error-404.png"
+import { useEffect } from "react";
 const NotFoundPage = () => {
+
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | 404 page"
+    }), [])
+
+
     return (
         <div className='mb-[40px]'>
-
-
             <section className="bg-white ">
                 <div className="container items-center min-h-screen pb-8 mx-auto">
                     <img className='mx-auto lg:w-[400px] w-[300px]' src={img} alt="" />
