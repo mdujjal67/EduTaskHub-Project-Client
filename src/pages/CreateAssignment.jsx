@@ -1,5 +1,5 @@
 // import { useLoaderData } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useState } from "react";
@@ -8,6 +8,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const CreateAssignment = () => {
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | CreateAssignment"
+    }), [])
 
     const [selectedLevel, setSelectedLevel] = useState("");
     const [submitted, setSubmitted] = useState(false);

@@ -11,9 +11,9 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateAssignments from "../pages/UpdateAssignments";
 import ViewAssignment from "../pages/ViewAssignment";
 import TakeAssignment from "../pages/TakeAssignment";
-import MyAttemptedAssignments from "../pages/MySubmission";
 import UserProfile from "../pages/UserProfile";
 import UpdateProfile from "../pages/UpdateProfile";
+import MySubmission from "../pages/MySubmission";
 
 const router = createBrowserRouter([
     {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         {
             path:"/my-submission",
             element: <PrivateRoutes>
-                <MyAttemptedAssignments></MyAttemptedAssignments>
+                <MySubmission></MySubmission>
             </PrivateRoutes>,
             loader: () => fetch(`${import.meta.env.VITE_API_URL}/submittedAssignments`)
         },

@@ -1,10 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import AssignmentCard from "../Components/AssignmentCard";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Assignments = () => {
+
+    // dynamic title
+    useEffect((() => {
+        document.title = "EduTaskHub | Assignments"
+    }), [])
+
     const { user, loading } = useContext(AuthContext);
     const initialAssignments = useLoaderData();
     const [assignments, setAssignments] = useState(initialAssignments);
