@@ -14,6 +14,7 @@ import TakeAssignment from "../pages/TakeAssignment";
 import UserProfile from "../pages/UserProfile";
 import UpdateProfile from "../pages/UpdateProfile";
 import MySubmission from "../pages/MySubmission";
+import GiveMark from "../pages/GiveMark";
 
 const router = createBrowserRouter([
     {
@@ -91,6 +92,13 @@ const router = createBrowserRouter([
                 <PendingAssignment></PendingAssignment>
             </PrivateRoutes>,
             loader: () => fetch(`${import.meta.env.VITE_API_URL}/submittedAssignments`)
+        },
+        {
+            path:"/give-mark/:id",
+            element:<PrivateRoutes>
+                <GiveMark></GiveMark>
+            </PrivateRoutes>,
+            loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/submittedAssignments/${params.id}`)
         },
         {
             path: "*",

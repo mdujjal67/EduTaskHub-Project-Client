@@ -1,8 +1,11 @@
 import PropTypes from "prop-types"
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+
 const PendingAssignmentCard = ({ pendingAssignment }) => {
-    const { title, marks } = pendingAssignment;
+    const { title, marks, _id } = pendingAssignment;
     const {user} = useContext(AuthContext);
 
     return (
@@ -21,7 +24,9 @@ const PendingAssignmentCard = ({ pendingAssignment }) => {
                             </td>
                             {/* col-4 */}
                             <td className="p-3">
-                                <button className="btn btn-sm bg-green-500 px-2  text-[12px] rounded-lg text-white">give mark</button>
+                                <Link to={`/give-mark/${_id}`}>
+                                    <button className="btn btn-sm bg-green-500 px-2  text-[12px] rounded-lg text-white">give mark</button>
+                                </Link>
                             </td>
                         </tr>
                         

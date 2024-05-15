@@ -23,8 +23,9 @@ const TakeAssignment = () => {
         const link = form.link.value;
         const note = form.note.value;
         const status = "pending";
+        const feedback = "";
 
-        const SubmittedDetails = {email, link, note, status, title, imageURL, marks, description, date, level }
+        const SubmittedDetails = {email, link, note, status, title, imageURL, marks, description, date, level, feedback }
         // console.log(SubmittedDetails);
 
 
