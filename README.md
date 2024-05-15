@@ -17,7 +17,7 @@ Welcome to EduTaskHub, your ultimate academic task management platform! Here, st
 - **Integrated Resource Linking**: Seamlessly integrate and link educational resources, such as articles, videos, and reference materials, directly within assignments, enhancing the learning experience and providing all necessary tools in one place.
 
 - ## NPM packages:
-- **Slick-Carousel**
+- **React-Slick**
 - **Framer-Motion**
 - **Animate.css**
 - **Sweetalert2**

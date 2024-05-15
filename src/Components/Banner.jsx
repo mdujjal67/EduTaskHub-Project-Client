@@ -3,31 +3,39 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BannerContent from "./BannerContent";
+import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
 
 const Banner = () => {
-    // const carouselRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const sliderRef = useRef(null);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         carouselRef.current.slickNext();
-    //     }, 5000); // Change 5000 to the desired interval in milliseconds (e.g., 5000 for 5 seconds)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (sliderRef.current) {
+                const totalSlides = sliderRef.current.props.children.length;
+                const nextIndex = (currentIndex + 1) % totalSlides;
+                setCurrentIndex(nextIndex);
+                sliderRef.current.slickGoTo(nextIndex);
+            }
+        }, 3000); // Change 5000 to the desired interval in milliseconds (e.g., 5000 for 5 seconds)
 
-    //     return () => clearInterval(interval);
-    // }, []);
+        return () => clearInterval(interval);
+    }, [currentIndex]);
 
-    // const settings = {
-    //     dots: false,
-    //     arrows: false,
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1
-    // };
+    const settings = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
     return (
         <div>
-            <div className="carousel w-full mb-[100px]">
+            <Slider {...settings} ref={sliderRef} className="carousel w-full mb-[100px]">
                 <div id="slide1" className="carousel-item relative w-full h-[500px] object-cover">
-                    <img src="https://i.ibb.co/Yjhy7FD/pexels-rdne-8500290.jpg" className="w-full rounded-xl object-cover" />
+                    <img src="https://i.ibb.co/Yjhy7FD/pexels-rdne-8500290.jpg" className="w-full rounded-xl object-cover h-[500px]" />
                     <div className="absolute flex items-center space-y-7 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] w-full rounded-xl">
                        <BannerContent></BannerContent> 
                     </div>
@@ -37,7 +45,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full h-[500px] object-cover">
-                    <img src="https://i.ibb.co/y6sy5p7/pexels-julia-m-cameron-4143799.jpg" className="w-full rounded-xl object-cover" />
+                    <img src="https://i.ibb.co/y6sy5p7/pexels-julia-m-cameron-4143799.jpg" className="w-full rounded-xl object-cover h-[500px]" />
                     <div className="absolute flex items-center space-y-7 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] w-full rounded-xl">
                        <BannerContent></BannerContent> 
                     </div>
@@ -47,7 +55,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full h-[500px] object-cover">
-                    <img src="https://i.ibb.co/NjSs6LD/pexels-cottonbro-4778611.jpg" className="w-full rounded-xl object-cover" />
+                    <img src="https://i.ibb.co/NjSs6LD/pexels-cottonbro-4778611.jpg" className="w-full rounded-xl object-cover h-[500px]" />
                     <div className="absolute flex items-center space-y-7 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] w-full rounded-xl">
                        <BannerContent></BannerContent> 
                     </div>
@@ -57,7 +65,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="slide4" className="carousel-item relative w-full h-[500px] object-cover">
-                    <img src="https://i.ibb.co/1M5JtBp/pexels-olly-3807755.jpg" className="w-full rounded-xl object-cover" />
+                    <img src="https://i.ibb.co/1M5JtBp/pexels-olly-3807755.jpg" className="w-full rounded-xl object-cover h-[500px]" />
                     <div className="absolute flex items-center space-y-7 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] w-full rounded-xl">
                        <BannerContent></BannerContent> 
                     </div>
@@ -66,7 +74,7 @@ const Banner = () => {
                         <a href="#slide1" className="btn btn-circle hover:bg-orange-600 hover:text-white text-xl hover:border-0">❯</a>
                     </div>
                 </div>
-            </div>
+            </Slider>
         </div>
     );
 };
