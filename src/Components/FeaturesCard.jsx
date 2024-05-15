@@ -12,7 +12,7 @@ const FeaturesCard = ({ feature }) => {
                 <img src={feature.img} alt={feature.title} className="w-full h-[200px] object-cover mb-4 hover:scale-105 transition duration-300 ease-in-out transform rounded-lg" />
                 </Zoom>
                 <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p className="text-gray-600 py-5">{feature.description}</p>
+                <p className="text-gray-600 py-5">{feature.description.substring(0, 125)}...</p>
                 <Zoom>
                     <button className="btn border-none outline-none bg-[#00396a] w-full text-white">Explore More</button>
                 </Zoom>

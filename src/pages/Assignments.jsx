@@ -65,6 +65,7 @@ const Assignments = () => {
     const filteredAssignments = selectedLevel
         ? assignments.filter(assignment => assignment.level === selectedLevel)
         : assignments;
+        console.log(filteredAssignments)
 
     return (
         <div>

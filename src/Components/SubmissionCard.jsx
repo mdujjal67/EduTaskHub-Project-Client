@@ -22,7 +22,7 @@ const SubmissionCard = ({ submission }) => {
                             </td>
                             {/* col-5 */}
                             <td className="p-3">
-                                <span className={status === 'pending' ? 'px-2 py-1 font-semibold rounded-md dark:bg-orange-600 dark:text-gray-50' : 'px-2 py-1 font-semibold rounded-md dark:bg-green-500 dark:text-gray-50'}>
+                                <span className={status === 'pending' ? ' font-semibold rounded-md dark:text-orange-600 ' : ' font-semibold rounded-md dark:text-green-500 '}>
                                     <span>{status}</span>
                                 </span>
                             </td>

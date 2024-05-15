@@ -6,6 +6,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 const CreateAssignment = () => {
 
@@ -21,7 +22,7 @@ const CreateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const {user} = useContext(AuthContext)
 
-    
+    const navigate = useNavigate()
 
     const handleCreate = (event) => {
         event.preventDefault();
@@ -55,7 +56,8 @@ const CreateAssignment = () => {
                 console.log(data)
                 if (data.insertedId) {
                     toast.success('Assignment Created!');
-                    form.reset()
+                    form.reset();
+                    navigate('/assignment')
                 }
 
             })

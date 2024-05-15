@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const TakeAssignment = () => {
@@ -10,7 +10,7 @@ const TakeAssignment = () => {
         document.title = "EduTaskHub | Take-Assignment"
     }), [])
 
-
+    const navigate = useNavigate()
 
     const { user } = useContext(AuthContext)
     const assignmentDetails = useLoaderData()
@@ -40,7 +40,9 @@ const TakeAssignment = () => {
                 console.log(data)
                 if (data.insertedId) {
                     toast.success('Assignment Submitted Successfully!');
-                    form.reset()
+                    form.reset();
+                    navigate('/assignment')
+
                 }
     
             })
@@ -62,7 +64,7 @@ const TakeAssignment = () => {
                     <textarea placeholder="Your quick note " name="note" className="textarea textarea-md h-12 rounded-full w-full lg:w-[600px] mx-auto text-[16px]" required></textarea>
                 </div>
                 <div className="form-control pt-5">
-                    <input type="submit" className="btn border-none w-full lg:w-[600px] mx-auto bg-[#00396a] text-white hover:text-gray-700 rounded-full outline-none" value="Create Assignment" />
+                    <input type="submit" className="btn border-none w-full lg:w-[600px] mx-auto bg-[#00396a] text-white hover:text-gray-700 rounded-full outline-none" value="Submit Assignment" />
                 </div>
             </form>
         </div>

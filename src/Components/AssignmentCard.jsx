@@ -13,7 +13,7 @@ const AssignmentCard = ({ assignment, user, onDelete }) => {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "You haven't access to delete this assignment!",
+                text: "You don't have permission to delete this assignment!",
             });
             return;
         }
