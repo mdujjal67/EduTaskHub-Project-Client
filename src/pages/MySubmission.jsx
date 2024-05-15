@@ -18,7 +18,7 @@ const MySubmission = () => {
     useEffect(() => {
         const fetchSubmissions = async () => {
             if (user) {
-                const response = await axios.get('http://localhost:5000/submittedAssignments', { withCredentials: true });
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/submittedAssignments`, { withCredentials: true });
                 const userSubmissions = response.data.filter(submission => submission.email === user.email);
                 setSubmissions(userSubmissions);
             }

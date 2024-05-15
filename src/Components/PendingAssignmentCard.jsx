@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 const PendingAssignmentCard = ({ pendingAssignment }) => {
-    const { title, marks, _id } = pendingAssignment;
+    const { title, marks, _id, examineeName } = pendingAssignment;
     const {user} = useContext(AuthContext);
 
     return (
@@ -16,7 +16,7 @@ const PendingAssignmentCard = ({ pendingAssignment }) => {
                             </td>
                             {/* cols-2 */}
                             <td className="p-2 md:p-3">
-                                <p>{user?.displayName}</p>
+                                <p>{examineeName}</p>
                             </td>
                             {/* col-3 */}
                             <td className="p-2 md:p-3">

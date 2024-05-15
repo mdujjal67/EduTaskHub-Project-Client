@@ -46,7 +46,7 @@ const PendingAssignment = () => {
                         </thead>
                         <tbody>
                             {pendingAssignmentsFiltered.map(pendingAssignment => (
-                                <PendingAssignmentCard key={pendingAssignment.id} pendingAssignment={pendingAssignment} />
+                                <PendingAssignmentCard key={pendingAssignment.id} examineeName={pendingAssignment.examineeName} pendingAssignment={pendingAssignment}  />
                             ))}
                         </tbody>
                     </table>

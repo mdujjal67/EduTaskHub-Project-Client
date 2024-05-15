@@ -76,9 +76,6 @@ const UpdateAssignment = () => {
                     <div className="form-control">
                         <input type="text" name="title" defaultValue={title} placeholder="Assignment Title" className="input rounded-full" />
                     </div>
-                    {/* <div className="form-control">
-                        <input type="date" name="date" placeholder="Date"  className="input" required />
-                    </div> */}
                     <DatePicker defaultDate={defaultDate} name="date" className="text-gray-500 dark:text-gray-400 w-full py-3 rounded-full pl-5" selected={startDate} onChange={(date) => setStartDate(date)} />
                     <div className="form-control">
                         <input type="text" name="marks" defaultValue={marks} placeholder="Assignment Marks" className="input rounded-full" />

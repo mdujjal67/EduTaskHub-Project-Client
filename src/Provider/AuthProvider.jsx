@@ -40,13 +40,13 @@ const AuthProvider = ({ children }) => {
 
             // for token generate
             if (currentUser) {
-                axios.post(`http://localhost:5000/jwt`, loggedInUser, { withCredentials: true })
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`, loggedInUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                     })
             }
             else{
-                axios.post(`http://localhost:5000/logout`, loggedInUser, { withCredentials: true })
+                axios.post(`${import.meta.env.VITE_API_URL}/logout`, loggedInUser, { withCredentials: true })
                     .then(res => {
                         console.log( res.data)
                     })

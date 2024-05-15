@@ -20,12 +20,13 @@ const TakeAssignment = () => {
         event.preventDefault();
         const form = event.target;
         const email = user?.email;
+        const examineeName = user?.displayName
         const link = form.link.value;
         const note = form.note.value;
         const status = "pending";
         const feedback = "";
 
-        const SubmittedDetails = {email, link, note, status, title, imageURL, marks, description, date, level, feedback }
+        const SubmittedDetails = {email, link, note, status, title, imageURL, marks, description, date, level, feedback, examineeName }
         // console.log(SubmittedDetails);
 
 
