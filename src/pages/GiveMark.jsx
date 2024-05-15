@@ -14,7 +14,7 @@ const GiveMark = () => {
         // const email = user?.email;
         const obtainMarks = form.obtainMarks.value;
         const feedback = form.feedback.value;
-        const status = "marked";
+        const status = "completed";
         const submitGiveMarks = {obtainMarks,feedback, status};
         console.log(submitGiveMarks);
 
