@@ -27,7 +27,7 @@ Welcome to EduTaskHub! Edutaskhub is an educational platform designed to streaml
 - **MondoDB**
 
 
-- ## NPM packages:
+## NPM packages:
 - **React-Slick**
 - **Framer-Motion**
 - **Animate.css**
