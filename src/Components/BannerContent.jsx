@@ -8,7 +8,6 @@ const BannerContent = () => {
     return (
         <div className="animate__animated animate__fadeInUp">
             <div className="lg:w-3/5 lg:pl-10 pl-5 md:pl-5 pr-3">
-
                 <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white">Elevate Learning with EduTaskHub!</h1>
                 <p className="text-white py-7 text-[14px] lg:w-[550px]">Embark on Collaborative Learning Adventures,
                     Unveiling New Horizons and Growth.
